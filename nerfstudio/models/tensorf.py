@@ -255,7 +255,7 @@ class TensoRFModel(Model):
 
         # colliders
         if self.config.enable_collider:
-            self.collider = AABBBoxCollider(scene_box=self.scene_box)
+            self.collider = AABBBoxCollider(scene_box=self.scene_box, near_plane=self.config.collider_params["near_plane"])
 
         # regularizations
         if self.config.tensorf_encoding == "cp" and self.config.regularization == "tv":
